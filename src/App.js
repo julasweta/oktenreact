@@ -1,23 +1,52 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Simps from './Simps';
 
 function App() {
+  const simpsonsFamily = [  {
+    name: "Гомер Сімпсон",
+    surname: "Сімпсон",
+    age: 39,
+    gender: "чоловіча",
+    photo: "./img/s1.jpg"
+  },
+ {
+    name: "Мардж Сімпсон",
+    surname: "Сімпсон",
+    age: 36,
+    gender: "жіноча",
+    photo: "./img/s1.jpg"
+  },
+  {
+    name: "Барт Сімпсон",
+    surname: "Сімпсон",
+    age: 10,
+    gender: "чоловіча",
+    photo: "./img/s1.jpg"
+  },
+   {
+    name: "Ліса Сімпсон",
+    surname: "Сімпсон",
+    age: 8,
+    gender: "жіноча",
+    photo: "./img/s1.jpg"
+  },
+  {
+    name: "Меггі Сімпсон",
+    surname: "Сімпсон",
+    age: 1,
+    gender: "жіноча",
+    photo: "./img/s1.jpg"
+  }]
+  
+  ;
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+     {simpsonsFamily.map((item,index)=><Simps name={item.name} surname={item.surname} age={item.age}
+      gender={item.gender}  photo={item.photo} key = {index}/>)}
     </div>
   );
 }
