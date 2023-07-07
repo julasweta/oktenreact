@@ -1,11 +1,13 @@
 
 import './App.css';
 import Posts from './components/Posts';
+import Ships from './components/Ships';
 
 function App() {
   return (
     <div className="App">
-     <Posts></Posts>
+      <Ships/>
+     <Posts/>
     </div>
   );
 }
