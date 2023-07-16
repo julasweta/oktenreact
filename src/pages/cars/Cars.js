@@ -6,8 +6,6 @@ import CarForm from './CarForm';
 const Cars = () => {
     const [cars, setCars] = useState();
 
-  console.log(cars);
-
     const getCar = async () => {
         try {
             const response = await fetch('http://owu.linkpc.net/carsAPI/v1/cars', {

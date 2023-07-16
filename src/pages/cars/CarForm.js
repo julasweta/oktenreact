@@ -2,11 +2,13 @@ import React from 'react';
 import { useRef } from 'react';
 
 const CarForm = ({ addCar, changeCar }) => {
+    //change ref
     const id = useRef('');
     const brand = useRef('');
     const year = useRef('');
     const price = useRef('');
 
+    // add ref
     const brandAdd = useRef('');
     const yearAdd = useRef('');
     const priceAdd = useRef('');
@@ -33,7 +35,7 @@ const CarForm = ({ addCar, changeCar }) => {
     return (
 
         <div className='cars-form'>
-
+            {/* форма для змінни данних */}
             <form onSubmit={changeSubmit}>
                 <h2>Змінити дані</h2>
                 <label>
@@ -56,8 +58,9 @@ const CarForm = ({ addCar, changeCar }) => {
                 <button type='submit'>Змінити</button>
             </form>
 
+            {/* форма для додавання данних */}
             <form onSubmit={addSubmit}>
-            <h2>Додати машину</h2>
+                <h2>Додати машину</h2>
                 <label>
                     Brand:
                     <input type="text" ref={brandAdd} />
