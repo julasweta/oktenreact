@@ -13,8 +13,8 @@ app.use(bodyParser.urlencoded());
 
 
 app.post('/api/login', (request, response) => {
-    console.log(request);
-
+    console.log(`request `+ request);
+    console.log(`response ` + response);
     response.json(request.body);
 });
 

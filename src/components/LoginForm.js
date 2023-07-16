@@ -1,5 +1,5 @@
 const LoginForm = ({ handleSubmit, emailRef, passwordRef, newPostRef }) => {
-    console.log(emailRef, passwordRef);
+  
     return (
         <form onSubmit={handleSubmit}>
             <label>

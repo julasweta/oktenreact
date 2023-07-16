@@ -1,10 +1,15 @@
 import { useRef} from 'react';
 import LoginForm from '../components/LoginForm';
+
+
 const LoginPage = () => {
+
+  const emailRef = useRef('');
+  const passwordRef = useRef('');
+  const newPostRef = useRef('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(emailRef?.current?.value, passwordRef?.current?.value, newPostRef?.current?.value );
     handleRegister();
     handleNewPost();
   }
@@ -41,9 +46,7 @@ const LoginPage = () => {
     }
   }
 
-  const emailRef = useRef('');
-  const passwordRef = useRef('');
-  const newPostRef = useRef('');
+
 
   
   return(
