@@ -1,28 +1,22 @@
 import { useForm } from "react-hook-form";
 
 const AddUserForm = () => {
-    const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm()
+
+  const onSubmit = (data) => console.log(data)
 
   return (
     <div>AddUserForm
-            <form onSubmit={handleSubmit(console.log)}>
-      <input {...register("firstName", { required: true })} placeholder="First name" />
+            <form onSubmit={handleSubmit(onSubmit)}>
+      <input {...register("name", { required: true })} placeholder="name" />
 
-      <input {...register("lastName", { minLength: 2 })} placeholder="Last name" />
+      <input {...register("username", { minLength: 2 })} placeholder="username" />
 
-      <select {...register("category")}>
-        <option value="">Select...</option>
-        <option value="A">Category A</option>
-        <option value="B">Category B</option>
-      </select>
-      
-      <input {...register("checkbox")} type="checkbox" value="A" />
-      <input {...register("checkbox")} type="checkbox" value="B" />
-      <input {...register("checkbox")} type="checkbox" value="C" />
-      
-      <input {...register("radio")} type="radio" value="A" />
-      <input {...register("radio")} type="radio" value="B" />
-      <input {...register("radio")} type="radio" value="C" />
 
       <input type="submit" />
     </form>
