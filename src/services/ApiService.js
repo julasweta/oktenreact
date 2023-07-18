@@ -8,22 +8,21 @@ const Endpoints = {
   USERS: '/users'
 }
 
-export const apiService = {  
-    handleGetUsers:  (data) => {
-    axios.get(Endpoints.USERS)
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+export const apiService = {
+  handleGetUsers: async (data) => {
+    try {
+      const response = await instance.get(Endpoints.USERS);
+      return response.data;
+    } catch (error) {
+      console.log(error);
+    }
   },
 
-  handleAddUsers:  (data) => {
+  handleAddUsers: (data) => {
     axios.post(Endpoints.USERS, {
-        firstName: 'Fred',
-        lastName: 'Flintstone'
-      })
+      name: 'Fred',
+      username: 'Flintstone'
+    })
       .then(function (response) {
         console.log(response);
       })
