@@ -3,7 +3,7 @@ import React from 'react';
 
 const Car = ({car, onDelete, onOpenChangeForm}) => {
   return (
-    <div className="car">
+    <div className="item">
       <h3>{ car.name}</h3>
       <span>{car.id}</span>
       <span>{car.brand}</span>

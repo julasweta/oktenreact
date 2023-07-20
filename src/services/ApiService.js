@@ -5,20 +5,20 @@ const CARS = '/cars';
 
 export const apiService = {
 
-  //запит на отримання всіх машини
-  handleGetCars: async () => {
+  //запит на отримання всіх даних
+  handleGetCars: async (url) => {
     try {
-      const response = await axios.get(`${BASE_URL}${CARS}`);
+      const response = await axios.get(url? url :  `${BASE_URL}${CARS}` );
       return response.data;
     } catch (error) {
       console.log(error);
     }
   },
 
-  //запит на додавання машини
-  handleAddCars: async (data) => {
+  //запит на додавання
+  handleAddCars: async (data, url) => {
     try {
-      const response = await axios.post(`${BASE_URL}${CARS}`, data, {
+      const response = await axios.post(url? url :  `${BASE_URL}${CARS}` , data, {
         headers: {
           'Content-Type': 'application/json',
           'accept': 'application/json'
@@ -32,10 +32,10 @@ export const apiService = {
     }
   },
 
-  // запит на видалення машини
-  handleDeleteCars: async (id) => {
+  // запит на видалення
+  handleDeleteCars: async (id, url) => {
     try {
-      const response = await axios.delete(`${BASE_URL}${CARS}/${id}`, {
+      const response = await axios.delete(url? url+`/${id}` :  `${BASE_URL}${CARS}/${id}`, {
         headers: { 'accept': 'application/json' }
       });
       console.log('Response from handleAddCars:', response.data);
@@ -46,15 +46,15 @@ export const apiService = {
     }
   },
 
-  // запит на зміну данних машини
-  handleChangeCars: async (data) => {
+  // запит на зміну данних
+  handleChangeCars: async (data, url) => {
     const changeDta = {
       "brand": data.brand,
       "price": +data.price,
       "year": +data.year
     }
     try {
-      const response = await axios.patch(`${BASE_URL}${CARS}/${data.id}`, changeDta, {
+      const response = await axios.patch(url? url +`/${data.id}` : `${BASE_URL}${CARS}/${data.id}`, changeDta, {
         headers: {
           'Content-Type': 'application/json',
           'accept': 'application/json'

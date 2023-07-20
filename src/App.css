@@ -3,12 +3,12 @@
   margin: 0;
   padding: 0;
 }
-.cars{
+.items{
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
 }
-.car{
+.item{
   display: flex;
   justify-content: space-between;
   border: 2px solid rgb(205, 201, 201);
@@ -18,7 +18,7 @@ justify-content: space-between;
   margin: 10px;
 }
 
-.car  span:nth-child(3) {
+.item  span:nth-child(3) {
 color: rgb(226, 154, 154);
 padding: 0 10px 0 10px;
 }
@@ -75,4 +75,8 @@ padding: 0 10px 0 10px;
 
 .form .submit-btn:hover {
   background-color: #0056b3;
+}
+
+p{
+  color: red;
 }
