@@ -17,7 +17,16 @@ justify-content: space-between;
   width: 30%;
   margin: 10px;
 }
-
+.user{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(169, 223, 205);
+  width: 48%;
+  margin: 5px;
+}
+.user h3{
+color: #b6adf0;
+}
 .item  span:nth-child(3) {
 color: rgb(226, 154, 154);
 padding: 0 10px 0 10px;
@@ -79,4 +88,34 @@ padding: 0 10px 0 10px;
 
 p{
   color: red;
+}
+
+
+/* POSTS */
+.posts{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.post{
+  border: 2px solid rgb(217, 214, 214);
+  margin: 5px;
+  text-transform: capitalize;
+}
+.comments{
+  padding: 20px;
+}
+
+.show-butt {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Додайте інші стилі за потребою */
+}
+
+
+.show-butt button{
+  width: 200px;
+  height: 40px;
+  margin: 5px;
 }
