@@ -1,12 +1,12 @@
+import { Outlet } from 'react-router';
 import './App.css';
-import AddUserForm from './components/forms/AddUserForm';
-import Users from './pages/users/Users';
+import Navbar from './components/navbar/Navbar';
 
 function App() {
   return (
     <div className="App">
-      <Users/>
-      <AddUserForm/>
+      <Navbar/>
+     <Outlet/>
     </div>
   );
 }
