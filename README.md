@@ -16,11 +16,14 @@ http://owu.linkpc.net/carsAPI/v1/doc
 
 # hw-6 routing useLocation useParams
 ## Реалізувати 3 маршрути
-### todos - при переході на який тягнуться всі todo з https://jsonplaceholder.typicode.com/todos
+### todos 
+- при переході на який тягнуться всі todo з https://jsonplaceholder.typicode.com/todos
 
-### albums - при переході на який тягнуться всі альбоми з https://jsonplaceholder.typicode.com/albums
+### albums 
+- при переході на який тягнуться всі альбоми з https://jsonplaceholder.typicode.com/albums
 
-### comments - при переході на який тягнуться всі комментарі https://jsonplaceholder.typicode.com/comments
+### comments 
+- при переході на який тягнуться всі комментарі https://jsonplaceholder.typicode.com/comments
 при натисканні на комментар тягнеться пост, до якого належіить цей коментар. приклад запиту https://jsonplaceholder.typicode.com/posts/ID
 id поста взяти з коментаря (postId)
 
