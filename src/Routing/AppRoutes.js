@@ -1,7 +1,7 @@
 export const AppRoutes = {
     MAIN:  "/",
-    LOGIN: "/login",
-    USERS: "/users",
-    USERS_INFO: "/users/info",
-    USERID: "/users/:userId",
+    TODOS: "/todos",
+    ALBUMS: "/albums",
+    COMMENTS: "/comments",
+    POSTID: "/post/:postId",
   }
