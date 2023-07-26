@@ -1,14 +1,26 @@
-import { createBrowserRouter, Outlet, useNavigate, useLocation, useParams } from "react-router-dom";
-import Users from "../pages/users/Users"
+import { createBrowserRouter} from "react-router-dom";
 import { AppRoutes } from "./AppRoutes";
+import App from "../App";
+import {PosterPreview} from "../components";
+import { MoviePage, MoviesPage } from "../pages/movies";
+
 
 
 export const router = createBrowserRouter([
-    {
-        element: <Users/>,
-        errorElement: <h1>OOOOOpppsie</h1>,
-        children: [
-          {
-            path: AppRoutes.MAIN,
-            element: <div>Hello world!</div>,
-          },]}])
+  {
+    path: "/",
+    element: <App />,
+    errorElement: <h1>OOOOOpppsie</h1>,
+    children: [
+      {
+        path: AppRoutes.MOVIES,
+        element: <MoviesPage/>,
+      },
+      {
+        path: AppRoutes.MOVIE,
+        element: <MoviePage />,
+      },
+      {path: AppRoutes.IMAGE,
+        element:<PosterPreview/>,
+      }]
+  }])

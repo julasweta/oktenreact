@@ -1,65 +1,67 @@
-import axios from 'axios';
-
+const authToken = process.env.REACT_APP_AUTH_TOKEN;
 
 export const apiService = {
+  movies: async () => {
+    const options = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization: authToken,
+      },
+    };
 
-  //запит на отримання всіх даних
-  handleGet: async (url) => {
+    return fetch("https://api.themoviedb.org/3/discover/movie?page=2", options)
+      .then((response) => response.json())
+      .then((response) => {
+        return response.results;
+      })
+      .catch((err) => console.error(err));
+  },
+
+  genres: async () => {
+    const options = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization: authToken,
+      },
+    };
+
     try {
-      const response = await axios.get(url && url );
-      return response.data;
-    } catch (error) {
-      console.log(error);
+      const response = await fetch("https://api.themoviedb.org/3/genre/movie/list", options);
+      const data = await response.json();
+      return data.genres;
+    } catch (err) {
+      console.error(err);
+      return [];
     }
   },
 
-  //запит на додавання
-  handleAdd: async (data, url) => {
-    try {
-      const response = await axios.post(url && url  , data, {
-        headers: {
-          'Content-Type': 'application/json',
-          'accept': 'application/json'
-        }
-      });
-      console.log('Response from handleAddCars:', response.data);
-      return response.data;
-    } catch (error) {
-      console.log(error);
-      return null;
-    }
+  movie: async (id) => {
+    const options = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization: authToken,
+      },
+    };
+
+    return fetch(`https://api.themoviedb.org/3/movie/${id}`, options)
+      .then((response) => response.json())
+      .catch((err) => console.error(err));
   },
 
-  // запит на видалення
-  handleDelete: async (id, url) => {
-    try {
-      const response = await axios.delete(url && url+`/${id}`, {
-        headers: { 'accept': 'application/json' }
-      });
-      console.log('Response from handleAddCars:', response.data);
-      return response.data;
-    } catch (error) {
-      console.log(error);
-      return null;
-    }
-  },
+  image: async (id) => {
+    const options = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization: authToken,
+      },
+    };
 
-  // запит на зміну данних
-  handleChange: async (data, url) => {
-  
-    try {
-      const response = await axios.patch(url && url +`/${data.id}` , data, {
-        headers: {
-          'Content-Type': 'application/json',
-          'accept': 'application/json'
-        }
-      });
-      console.log('Response from handleAddCars:', response.data);
-      return response.data;
-    } catch (error) {
-      console.log(error);
-      return null;
-    }
+    return fetch(`https://api.themoviedb.org/3/movie/${id}/images`, options)
+      .then((response) => response.json())
+      .catch((err) => console.error(err));
   },
-
 };

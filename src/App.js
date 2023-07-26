@@ -1,12 +1,14 @@
-import './App.css';
-import AddUserForm from './components/forms/AddUserForm';
-import Users from './pages/users/Users';
+import { Outlet } from 'react-router';
+import { useState } from 'react';
+import { Header } from './components';
 
 function App() {
+  const [activeGenre, setActiveGenre] = useState(null);
+
   return (
     <div className="App">
-      <Users/>
-      <AddUserForm/>
+      <Header activeGenre={activeGenre} setActiveGenre={setActiveGenre} />
+      <Outlet context={[activeGenre, setActiveGenre]}/>
     </div>
   );
 }
