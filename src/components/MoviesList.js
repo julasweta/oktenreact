@@ -30,12 +30,11 @@ const MoviesList = () => {
   return (
     <>
       <div className="pages">
-         
-          <button onClick={() =>pageRequr(page) && setPage(page - 1)} className="menu-button page_btn">
-            <p>{page - 1}</p>
-            {`<<<`} Prev page
-          </button>
-        
+        <button onClick={() => pageRequr(page) && setPage(page - 1)} className="menu-button page_btn">
+          <p>{page - 1}</p>
+          {`<<<`} Prev page
+        </button>
+
         <button className="menu-button page_btn">Page: {page}</button>
         <button onClick={() => setPage(page + 1)} className="menu-button page_btn">
           {page + 1} <p>Next page {`>>>`}</p>
@@ -54,4 +53,3 @@ const MoviesList = () => {
 };
 
 export { MoviesList };
-

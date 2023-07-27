@@ -16,18 +16,21 @@ const PosterPreview = () => {
   }, [params.id]);
 
   return (
-    <div className="poster_preview">
-      {image &&
-        image.backdrops.map((item, index) => (
-          <img
-            src={`https://image.tmdb.org/t/p/w500/${item.file_path}`}
-            alt="gg"
-            onClick={() => setTransyt(!transyt)}
-            className={transyt ? "transition" : ""}
-            key={index}
-          ></img>
-        ))}
-    </div>
+    <>
+      <div className="transition-container">
+        {image &&
+          image.backdrops.map((item, index) => (
+            <img
+              src={`https://image.tmdb.org/t/p/w500/${item.file_path}`}
+              alt="poster"
+              onClick={() => setTransyt(transyt === item.file_path ? null : item.file_path)} // Змінюємо стан transyt на item.file_path або null, якщо вже було вибрано
+              className={transyt === item.file_path ? "transition" : ""}
+              key={item.file_path}
+            ></img>
+          ))}
+      </div>
+      {transyt && <div className="dark-overlay"></div>}
+    </>
   );
 };
 
