@@ -31,6 +31,7 @@ body {
   width: 95vw;
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .movies {
@@ -38,18 +39,24 @@ body {
   min-height: calc(100vh - 12vh);
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
+  padding-top: 200px;
 }
 
 /* HEADER */
 .header {
   background-color: black;
-  width: 100%;
+  width: 90%;
   height: 80px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: relative;
+  position: fixed;
+  top:20px;
+  z-index: 2;
+  border-bottom: 1px solid white;
 }
 
 .genres {
@@ -65,19 +72,19 @@ body {
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  z-index: 25;
+  z-index: 7;
   opacity: 0;
   max-height: 0;
   overflow: hidden;
   transition: opacity 0.3s ease, max-height 0.3s ease;
   opacity: 1;
   max-height: 500px;
-  animation: anim 5s forwards;
+  animation: anim 4s forwards;
 }
 
 @keyframes anim {
   from {
-    background-color: #2ecc71;
+    background-color: #232627;
     transform: translateX(-20%);
   }
 
@@ -108,7 +115,7 @@ body {
   padding: 10px 20px;
   background-color: #3498db;
   color: #fff;
-  font-size: 16px;
+  font-size: 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -123,7 +130,7 @@ body {
 }
 
 .menu-button.active {
-  background-color: #2ecc71;
+  background-color: #e5eee9;
   transform: translateY(2px);
 }
 
@@ -160,15 +167,46 @@ body {
 .menu-button:active {
   transform: translateY(2px);
 }
+.home-btn{
+  animation: colorChange 5s infinite;
+}
+
+
+@keyframes colorChange {
+  0% {
+    color: white;
+  }
+  50% {
+    color: lightblue; 
+  }
+  100% {
+    color: darkblue;
+  }
+}
+
+.pages{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  top:100px;
+  z-index: 1;
+}
+.page_btn{
+  width: 200px;
+  border-radius: 10px;
+  background-color: #0f1a28;
+  font-size: 12px;
+}
 
 .user {
   border: none;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  border-radius: 20%;
+  width: max-content;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 2px solid white;
 }
 
 
@@ -290,3 +328,26 @@ ol li {
   position: fixed;
   top: 20px;
 }
+
+/*Page Animation */
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 700ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 7s;
+}
+
+
+

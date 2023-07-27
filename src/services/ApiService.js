@@ -1,7 +1,9 @@
 const authToken = process.env.REACT_APP_AUTH_TOKEN;
 
 export const apiService = {
-  movies: async () => {
+  //всі відео
+  movies: async (page) => {
+    console.log(page);
     const options = {
       method: "GET",
       headers: {
@@ -10,13 +12,14 @@ export const apiService = {
       },
     };
 
-    return fetch("https://api.themoviedb.org/3/discover/movie?page=2", options)
+    return fetch(`https://api.themoviedb.org/3/discover/movie?page=${page}`, options)
       .then((response) => response.json())
       .then((response) => {
         return response.results;
       })
       .catch((err) => console.error(err));
   },
+
 
   genres: async () => {
     const options = {

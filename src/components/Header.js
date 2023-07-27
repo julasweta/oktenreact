@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { UserInfo } from "./UserInfo";
 import { GenreBadge } from "./GenreBadge";
 
-const Header = ({ activeGenre, setActiveGenre }) => {
+const Header = ({ activeGenre, setActiveGenre, page, setPage }) => {
   const [genres, setGenres] = useState();
   const [showMenu, setShowMenu] = useState(false);
 
@@ -14,11 +14,16 @@ const Header = ({ activeGenre, setActiveGenre }) => {
     };
     axiosGet();
   }, []);
+  const resetAll = ()=> {
+    setActiveGenre(null);
+    setPage(1);
+    setShowMenu(false)
+  }
 
   return (
     <div className="header">
-      <Link className="menu-button" to={`/`}>
-        Home
+      <Link className="menu-button home-btn" to={`/`} onClick={resetAll} >
+      The Movies
       </Link>
       <div className="menu-button" onClick={() => setShowMenu(!showMenu)}>
         Genres
