@@ -11,10 +11,8 @@ const MoviesList = () => {
 
   useEffect(() => {
     const axiosGet = async () => {
-      const allMovies = await apiService.movies(page);
-      const filterMovies = allMovies.filter((item) => item.genre_ids.includes(activeGenre));
-
-      setMovies(activeGenre ? filterMovies : allMovies);
+      const allMovies = await apiService.movies(page, activeGenre);
+      setMovies(allMovies);
     };
     axiosGet();
   }, [activeGenre, page]);
