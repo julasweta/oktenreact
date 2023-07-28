@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/oktenreact/static/css/main.e6c13ad2.css",
+    "main.js": "/oktenreact/static/js/main.4b85c311.js",
+    "index.html": "/oktenreact/index.html",
+    "main.e6c13ad2.css.map": "/oktenreact/static/css/main.e6c13ad2.css.map",
+    "main.4b85c311.js.map": "/oktenreact/static/js/main.4b85c311.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.4b85c311.js"
+  ]
+}
