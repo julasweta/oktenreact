@@ -7,7 +7,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 const MoviesList = () => {
   const [movies, setMovies] = useState([]);
   const [activeGenre, setActiveGenre, page, setPage] = useOutletContext();
-  console.log(page);
+
 
   useEffect(() => {
     const axiosGet = async () => {

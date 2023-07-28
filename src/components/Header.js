@@ -14,28 +14,43 @@ const Header = ({ activeGenre, setActiveGenre, page, setPage }) => {
     };
     axiosGet();
   }, []);
-  const resetAll = ()=> {
+
+  const resetAll = () => {
     setActiveGenre(null);
     setPage(1);
-    setShowMenu(false)
+    setShowMenu(false);
+    setActiveBtn('all');
+  };
+
+  const [activeBtn, setActiveBtn] = useState();
+  const onAll = () => {
+    setActiveGenre(null);
+    setActiveBtn('all');
   }
 
   return (
     <div className="header">
-      <Link className="menu-button home-btn" to={`/`} onClick={resetAll} >
-      The Movies
+      <Link className="menu-button home-btn" to={`/`} onClick={resetAll}>
+        The Movies
       </Link>
       <div className="menu-button" onClick={() => setShowMenu(!showMenu)}>
         Genres
       </div>
       {showMenu && (
         <div className="genres">
-          <Link className="genre" onClick={() => setActiveGenre(null)} to={`/`}>
+          <Link className={activeBtn === 'all'? 'red' : 'genre'} onClick={onAll} to={`/`}>
             All
           </Link>
           {genres &&
             genres.map((genre) => (
-              <GenreBadge genre={genre} key={genre.id} activeGenre={activeGenre} setActiveGenre={setActiveGenre} />
+              <GenreBadge
+                genre={genre}
+                key={genre.id}
+                activeGenre={activeGenre}
+                setActiveGenre={setActiveGenre}
+                activeBtn={activeBtn}
+                setActiveBtn={setActiveBtn}
+              />
             ))}
         </div>
       )}

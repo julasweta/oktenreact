@@ -3,7 +3,6 @@ const authToken = process.env.REACT_APP_AUTH_TOKEN;
 export const apiService = {
   //всі відео
   movies: async (page, gener) => {
-    console.log(page);
     const options = {
       method: "GET",
       headers: {
@@ -19,7 +18,6 @@ export const apiService = {
       })
       .catch((err) => console.error(err));
   },
-
 
   genres: async () => {
     const options = {

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const MovieInfo = ({ movie }) => {
+  console.log(movie);
   return (
     <div className="movies">
       {movie && (
