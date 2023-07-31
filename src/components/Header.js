@@ -28,12 +28,17 @@ const Header = ({ activeGenre, setActiveGenre, page, setPage }) => {
     setActiveBtn('all');
   }
 
+  const onGenres = () => {
+    setShowMenu(!showMenu);
+    setPage(1);
+  }
+
   return (
     <div className="header">
       <Link className="menu-button home-btn" to={`/`} onClick={resetAll}>
         The Movies
       </Link>
-      <Link to={'/'} className="menu-button" onClick={() => setShowMenu(!showMenu)}>
+      <Link to={'/'} className="menu-button" onClick={onGenres}>
         Genres
       </Link>
       {showMenu && (
