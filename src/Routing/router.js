@@ -1,7 +1,7 @@
 import { createBrowserRouter} from "react-router-dom";
 import { AppRoutes } from "./AppRoutes";
 import App from "../App";
-import {PosterPreview} from "../components";
+import {PosterPreview, UserInfo} from "../components";
 import { MoviePage, MoviesPage } from "../pages/movies";
 
 
@@ -22,5 +22,8 @@ export const router = createBrowserRouter([
       },
       {path: AppRoutes.IMAGE,
         element:<PosterPreview/>,
+      },
+      {path: AppRoutes.USERINFO,
+        element:<UserInfo/>,
       }]
   }])

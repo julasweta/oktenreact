@@ -33,9 +33,9 @@ const Header = ({ activeGenre, setActiveGenre, page, setPage }) => {
       <Link className="menu-button home-btn" to={`/`} onClick={resetAll}>
         The Movies
       </Link>
-      <div className="menu-button" onClick={() => setShowMenu(!showMenu)}>
+      <Link to={'/'} className="menu-button" onClick={() => setShowMenu(!showMenu)}>
         Genres
-      </div>
+      </Link>
       {showMenu && (
         <div className="genres">
           <Link className={activeBtn === 'all'? 'red' : 'genre'} onClick={onAll} to={`/`}>
@@ -54,7 +54,7 @@ const Header = ({ activeGenre, setActiveGenre, page, setPage }) => {
             ))}
         </div>
       )}
-      <UserInfo />
+      <Link to={'/userinfo'} className="menu-button" onClick={()=>setShowMenu(false)} >UserInfo</Link>
     </div>
   );
 };

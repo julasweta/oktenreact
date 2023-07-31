@@ -208,14 +208,18 @@ body {
 }
 
 .user {
-  border: none;
-  border-radius: 20%;
-  width: max-content;
+  padding-top: 150px;
+  height: 60vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
-  border: 2px solid white;
+  align-content: stretch;
 }
+.user h1{
+  color: #88091c;
+}
+
 
 
 /* CARD */
