@@ -1,14 +1,21 @@
+import React, { Component } from 'react';
+import { Link, Outlet } from 'react-router-dom';
 import './App.css';
-import AddUserForm from './components/forms/AddUserForm';
-import Users from './pages/users/Users';
+import { AppRoutes } from './Routing/AppRoutes';
 
-function App() {
-  return (
-    <div className="App">
-      <Users/>
-      <AddUserForm/>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <header>
+          <Link to={AppRoutes.POSTS}><button>Posts</button></Link>
+          <Link to={AppRoutes.AUTO}><button>Auto</button></Link>
+        </header>
+        <Outlet />
+      </div>
+    );
+  }
 }
 
 export default App;
+
