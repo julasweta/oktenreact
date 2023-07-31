@@ -230,25 +230,34 @@ body {
   justify-content: space-around;
   transition: transform 0.3s ease;
   width: 100%;
+  align-items: stretch; /* Додайте це, щоб всі .card розтягувались на висоту */
 }
 
 .card {
   color: aliceblue;
   width: 20%;
-  height: 220px;
+  flex-grow: 1; /* Замініть висоту на flex-grow */
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  align-content: stretch;
   margin: 5px;
   text-decoration: none;
   background-color: #100e22;
-
   box-shadow: 0 0 10px rgba(244, 241, 241, 0.8);
+  padding: 5px;
+  margin: 10px;
 }
+
 
 .card:hover {
   transform: scale(1.05);
+}
+
+.card h3{
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 .card img {
@@ -263,6 +272,7 @@ body {
   color: rgb(160, 205, 220);
   font-weight: 700;
   text-transform: capitalize;
+  font-size: 0.8rem;
 }
 
 /* MOVIE */
