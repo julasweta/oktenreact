@@ -216,7 +216,8 @@ body {
   align-items: center;
   align-content: stretch;
 }
-.user h1{
+
+.user h1 {
   color: #88091c;
 }
 
@@ -406,7 +407,7 @@ ol li {
   }
 }
 
-.red{
+.red {
   color: red;
   font-weight: 700;
   font-size: 20px;
@@ -422,8 +423,73 @@ ol li {
   align-items: center;
 }
 
-.change{
+.change {
   color: #1b6ccf;
 }
 
 
+/*adaptive  */
+
+
+/* Версія для малих екранів (мобільних пристроїв) */
+@media screen and (max-width: 767px) {
+
+
+
+  .movies {
+    padding-top: 100px;
+  }
+
+  .container {
+    width: 90vw;
+  }
+
+  .cards {
+    justify-content: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .movie img {
+    width: 150px;
+    height: 200px;
+  }
+
+  /* */
+  .header {
+    height: 60px;
+    padding: 0 10px;
+  }
+  .menu-button{
+    font-size: 12px;
+    height: 32px;
+  }
+
+
+  .pages .menu-button {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8px;
+    width: min-content;
+    height: 42px;
+    white-space: nowrap;
+  }
+
+
+
+  .mobile-menu .menu-button:hover {
+    color: #2980b9;
+  }
+
+
+
+
+  .mobile-menu .genre {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+
+}
