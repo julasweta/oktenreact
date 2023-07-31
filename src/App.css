@@ -203,7 +203,7 @@ body {
 .page_btn {
   width: 200px;
   border-radius: 10px;
-  font-size: 12px;
+  font-size: 16px;
   background: linear-gradient(to right, #3a3c3e, #000406);
 }
 
@@ -252,7 +252,7 @@ body {
 }
 
 .card img {
-  width: 220px;
+  width: 80%;
   height: 100px;
   object-fit: cover;
   margin: 7px;
@@ -428,14 +428,8 @@ ol li {
 }
 
 
-/*adaptive  */
-
-
 /* Версія для малих екранів (мобільних пристроїв) */
 @media screen and (max-width: 767px) {
-
-
-
   .movies {
     padding-top: 100px;
   }
@@ -463,10 +457,9 @@ ol li {
     padding: 0 10px;
   }
   .menu-button{
-    font-size: 12px;
+    font-size: 14px;
     height: 32px;
   }
-
 
   .pages .menu-button {
     font-family: Arial, Helvetica, sans-serif;
@@ -476,14 +469,9 @@ ol li {
     white-space: nowrap;
   }
 
-
-
   .mobile-menu .menu-button:hover {
     color: #2980b9;
   }
-
-
-
 
   .mobile-menu .genre {
     width: 100%;
