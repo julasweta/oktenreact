@@ -1,14 +1,16 @@
-import { createBrowserRouter, Outlet, useNavigate, useLocation, useParams } from "react-router-dom";
-import Users from "../pages/users/Users"
-import { AppRoutes } from "./AppRoutes";
+import { createBrowserRouter } from "react-router-dom";
+
+import App from "../App";
+import TestUseMemo from "../components/TestUseMemo";
 
 
 export const router = createBrowserRouter([
     {
-        element: <Users/>,
+      path: '/',
+        element: <App/>,
         errorElement: <h1>OOOOOpppsie</h1>,
-        children: [
-          {
-            path: AppRoutes.MAIN,
-            element: <div>Hello world!</div>,
-          },]}])
+        children:[{
+          index:true,
+          element:<TestUseMemo/>
+        }]
+       }])

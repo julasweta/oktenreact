@@ -7,7 +7,8 @@ const urls = {
     },
     placeholder: {
         posts: '/posts',
-        comments: '/comments'
+        comments: '/comments',
+        users: '/users'
     }
 }
 
