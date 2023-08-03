@@ -15,14 +15,14 @@ class Comments extends Component {
     const path = window.location.pathname;
     const parts = path.split('/');
      const postId = parts[parts.length - 1];
-  
+
     fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
       .then((response) => response.json())
       .then((data) => this.setState({ comments: data }))
       .catch((error) => console.error('Error fetching comments:', error));
   };
-  
-  
+
+
 
   componentDidMount() {
     this.getComments();
