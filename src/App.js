@@ -53,7 +53,7 @@ const App=()=> {
       <h2>UseArray</h2>
       <button onClick={()=>onAddItem()}>Add User</button>
       <button onClick={()=>onRemoveItem()}>Remo veUser</button>
-      {array && array.map(item=><div>{item.name}</div>)}
+      {array && array.map(item=><div key={item.id}>{item.name}</div>)}
 
     </div>
   );

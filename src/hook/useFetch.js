@@ -6,13 +6,13 @@ export function useFetch(path){
   const [value, setValue] = useState(0)
 
   useEffect(()=>{
-    console.log(exampleBaseUrl + path +'');
-    fetch(exampleBaseUrl+path + '')
+    console.log(exampleBaseUrl + path);
+    fetch(exampleBaseUrl+path)
       .then(resp => resp.json())
       .then(data => {
         setValue(data)
       })
-  },[])
+  },[path])
 
 
 
