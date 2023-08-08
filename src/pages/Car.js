@@ -24,12 +24,18 @@ const onDeleteCar=()=>{
     });
 }
 
+const onChangeCar = () => {
+  dispatch(carsActions.setChangeCarId(car.id))
+  dispatch(carsActions.setShowForm('change'))
+}
+
   return (
     <div className="car">
       <h2>{car.brand}</h2>
       <p>{car.price}</p>
       <p>{car.year}</p>
       <button onClick={()=>onDeleteCar()}>Delete Car</button>
+      <button onClick={()=>onChangeCar()}>Change  Car</button>
     </div>
   );
 };

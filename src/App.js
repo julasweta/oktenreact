@@ -5,7 +5,7 @@ import AddCarForm from './components/forms/AddCarForm';
 function App() {
   return (
     <div className="App">
-      <AddCarForm/>
+    
     <Outlet/>
     </div>
   );
