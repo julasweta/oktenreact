@@ -1,14 +1,15 @@
-import { createBrowserRouter, Outlet, useNavigate, useLocation, useParams } from "react-router-dom";
-import Users from "../pages/users/Users"
+import { createBrowserRouter } from "react-router-dom";
 import { AppRoutes } from "./AppRoutes";
+import App from "../App";
+import Cars from "../pages/Cars";
 
 
 export const router = createBrowserRouter([
     {
-        element: <Users/>,
+        element: <App></App>,
         errorElement: <h1>OOOOOpppsie</h1>,
         children: [
           {
             path: AppRoutes.MAIN,
-            element: <div>Hello world!</div>,
+            element: <Cars>Hello world!</Cars>,
           },]}])

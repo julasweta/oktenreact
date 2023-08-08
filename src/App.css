@@ -3,3 +3,16 @@
   margin: 0;
   padding: 0;
 }
+.cars{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.car{
+  width: 15%;
+  border: 2px solid gray;
+  border-radius: 15px;
+  padding: 10px;
+}

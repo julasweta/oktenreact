@@ -100,3 +100,7 @@ https://dribbble.com/search/movies%20web%20app
 ### 
  створити хук function useArray(defaultValue), котрий спроможний маніпулювати станом масива певної копмоненти
  В середині хука реалізувати методи add(item), remove(id)
+
+ # hw-9-redux-core
+###
+ Реалізувати crud операції з автівками з http://owu.linkpc.net/carsAPI/v1/doc використовуючи react redux

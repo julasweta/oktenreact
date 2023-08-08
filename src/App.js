@@ -1,12 +1,12 @@
+import { Outlet } from 'react-router-dom';
 import './App.css';
-import AddUserForm from './components/forms/AddUserForm';
-import Users from './pages/users/Users';
+import AddCarForm from './components/forms/AddCarForm';
 
 function App() {
   return (
     <div className="App">
-      <Users/>
-      <AddUserForm/>
+      <AddCarForm/>
+    <Outlet/>
     </div>
   );
 }
