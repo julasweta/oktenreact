@@ -1,8 +1,7 @@
-import axios from "axios";
 import { useForm } from "react-hook-form";
 import { carsActions } from "../../redux/actions/carsActions";
 import { useDispatch } from "react-redux";
-import { owuBaseURl, urls } from "../../constants/urls";
+import { carsService } from "../../services/carsServices";
 
 const AddCarForm = () => {
   const dispatch = useDispatch();
@@ -13,28 +12,15 @@ const AddCarForm = () => {
     formState: { errors },
   } = useForm()
 
+  // запит на сервер на додавання нової машини
   const onSubmit = (data) => {
-    console.log(data)
     const data2 = {
       "brand": data.brand,
       "price": data.price,
       "year": data.year
     }
 
-
-    axios.post(`${owuBaseURl + urls.owu.cars}`, data2, {
-      headers: {
-        'accept': 'application/json' ,
-        'Content-Type': 'application/json'
-      }
-    })
-      .then(response => {
-      //записуємо тригер
-      dispatch(carsActions.deleteTriger());
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+    carsService.addCar(data2).then(({ data }) => dispatch(carsActions.deleteTriger()))
 
   }
 
@@ -42,7 +28,7 @@ const AddCarForm = () => {
     <div className="form">
       AddCarForm
       <form onSubmit={handleSubmit(onSubmit)}>
-      <input
+        <input
           type="text"
           {...register('brand', {
             required: 'Brand is required',
@@ -53,7 +39,7 @@ const AddCarForm = () => {
           })}
           placeholder="brand"
         />
-        
+
         <input
           type="text"
           {...register("price", {
@@ -86,11 +72,10 @@ const AddCarForm = () => {
           placeholder="year"
         />
 
-{errors.brand && <div>{errors.brand.message}</div>}
+        {errors.brand && <div>{errors.brand.message}</div>}
         {errors.price && <div>{errors.price.message}</div>}
         {errors.year && <div>{errors.year.message}</div>}
-        {errors.id && <div>{errors.id.message}</div>}
-        <input type="submit" value=" Додати "/>
+        <input type="submit" value=" Додати " />
       </form>
     </div>
   )
