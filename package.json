@@ -2,7 +2,6 @@
   "name": "oktenreact",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://julasweta.github.io/oktenreact",
   "dependencies": {
     "@hookform/resolvers": "^3.1.1",
     "@testing-library/jest-dom": "^5.16.5",

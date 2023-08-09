@@ -1,12 +1,12 @@
 import './App.css';
 import AddUserForm from './components/forms/AddUserForm';
-import Users from './pages/users/Users';
+import Post from "./pages/Post"
 
 function App() {
   return (
     <div className="App">
-      <Users/>
-      <AddUserForm/>
+      <Post />
+      <AddUserForm />
     </div>
   );
 }
