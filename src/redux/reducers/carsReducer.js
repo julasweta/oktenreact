@@ -9,8 +9,8 @@ export const CarsActionTypes = {
   SET_ERROR: 'SET_ERROR',
   SET_CARS: 'SET_CARS',
   DELETE_TRIGER: 'DELETE_TRIGER',
-  CHANGE_CAR_ID: 'CHANGE_CAR_ID',
-  SHOW_FORM: 'SHOW_FORM'
+  SET_CHANGE_CAR_ID: 'SET_CHANGE_CAR_ID',
+  SET_SHOW_FORM: 'SET_SHOW_FORM'
 }
 
 const carsReducer = (state = initialState, action) => {
@@ -26,12 +26,12 @@ const carsReducer = (state = initialState, action) => {
         ...state,
         deleteTriger: !state.deleteTriger
       }
-    case CarsActionTypes.CHANGE_CAR_ID:
+    case CarsActionTypes.SET_CHANGE_CAR_ID:
       return {
         ...state,
         changeCarId: action.payload
       }
-      case CarsActionTypes.SHOW_FORM:
+      case CarsActionTypes.SET_SHOW_FORM:
       return {
         ...state,
         showForm: action.payload
