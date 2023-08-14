@@ -10,8 +10,12 @@ const Cars = () => {
     price: number;
   }
   type Cars = Car[];
+  type Id = number;
 
   const [cars, setCars] = useState<Cars>();
+  const [id, setId] = useState<Id>(0);
+
+  /* ------------------------------------------------------------------------------- */
 
   const getCar = async () => {
     try {
@@ -60,15 +64,17 @@ const Cars = () => {
         },
       });
       const data = await response.status;
-      console.log(data);
       getCar();
     } catch (error) {
       console.error(error);
     }
   };
 
+  const getForChange = (id:number)=>{
+setId(id)
+  }
+
   const changeCar = async (id: number, brand: string, year: number, price: number) => {
-    console.log(id);
     try {
       const response = await fetch(`http://owu.linkpc.net/carsAPI/v1/cars/${id}`, {
         method: "PATCH",
@@ -92,9 +98,9 @@ const Cars = () => {
 
   return (
     <div className="cars">
-      <CarForm addCar={addCar} changeCar={changeCar} />
+      <CarForm addCar={addCar} changeCar={changeCar} id={id} />
 
-      {cars && cars.map((car: Car) => <Car car={car} key={car.id} deleteCar={deleteCar} />)}
+      {cars && cars.map((car: Car) => <Car car={car} key={car.id} deleteCar={deleteCar} getForChange={getForChange} />)}
     </div>
   );
 };

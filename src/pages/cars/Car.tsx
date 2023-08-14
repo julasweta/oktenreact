@@ -8,9 +8,12 @@ interface CarProps {
     year: number;
   };
   deleteCar: (id: number) => void;
+  getForChange:(id:number)=> void;
 }
+ /* ------------------------------------------------------------------------------------------------- */
+const Car = ({ car, deleteCar,getForChange }: CarProps) => {
 
-const Car = ({ car, deleteCar }: CarProps) => {
+
   return (
     <div className="car">
       <div>id - {car && car.id}</div>
@@ -18,6 +21,7 @@ const Car = ({ car, deleteCar }: CarProps) => {
       <div>price - {car && car.price}</div>
       <div>year - {car && car.year}</div>
       <button onClick={() => deleteCar(car.id)}> delete </button>
+      <button onClick={() =>getForChange(car.id) }> change  </button>
     </div>
   );
 };
