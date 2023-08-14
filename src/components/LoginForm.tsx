@@ -1,4 +1,16 @@
-const LoginForm = ({ handleSubmit, emailRef, passwordRef, newPostRef }) => {
+
+import React from 'react';
+
+interface LoginFormProps {
+    handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+    emailRef: React.RefObject<HTMLInputElement>;
+    passwordRef: React.RefObject<HTMLInputElement>;
+    newPostRef: React.RefObject<HTMLInputElement>;
+  }
+  
+
+
+const LoginForm = ({ handleSubmit, emailRef, passwordRef, newPostRef }:LoginFormProps) => {
   
     return (
         <form onSubmit={handleSubmit}>
