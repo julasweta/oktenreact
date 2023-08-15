@@ -1,28 +1,42 @@
-import { useForm } from "react-hook-form";
+import React from "react";
+import {  useForm } from "react-hook-form";
+import type { SubmitHandler } from "react-hook-form"
 import { carsActions } from "../../redux/actions/carsActions";
 import { useDispatch } from "react-redux";
 import { carsService } from "../../services/carsServices";
+import { Car } from "../../pages/Cars";
 
 const AddCarForm = () => {
   const dispatch = useDispatch();
 
+ type AddCar = {
+    brand: string;
+    price: number;
+    year: number;
+  }
+  
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm()
+  } = useForm<AddCar>()
+
+
 
   // запит на сервер на додавання нової машини
-  const onSubmit = (data) => {
-    const data2 = {
-      "brand": data.brand,
-      "price": data.price,
-      "year": data.year
-    }
-
-    carsService.addCar(data2).then(({ data }) => dispatch(carsActions.deleteTriger()))
-
-  }
+  const onSubmit: SubmitHandler<Partial<Car>> = (data) => {
+    // Тут можна використовувати data, які вже є частково типізовані
+    const newCar: AddCar = {
+      brand: data.brand || "", // Приклад: забезпечте значення за замовчуванням
+      price: data.price || 0,
+      year: data.year || 0
+    };
+  
+    carsService.addCar(newCar).then(({ data }) => {
+      dispatch(carsActions.deleteTriger());
+    });
+  };
+  
 
   return (
     <div className="form">
