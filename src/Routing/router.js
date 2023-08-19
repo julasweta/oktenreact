@@ -11,7 +11,7 @@ export const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <Navigate to={'characters'}/>,
+            element: <Navigate to={'episodes'}/>,
           },
           {
             path: AppRoutes.EPISODES,
