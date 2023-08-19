@@ -1,7 +1,8 @@
+import { urls } from "../constants/urls";
+
 export const AppRoutes = {
     MAIN:  "/",
-    LOGIN: "/login",
-    USERS: "/users",
-    USERS_INFO: "/users/info",
+    EPISODES: urls.episodes,
+    CHARACTERS: urls.characters,
     USERID: "/users/:userId",
   }

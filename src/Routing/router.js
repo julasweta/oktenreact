@@ -1,14 +1,26 @@
-import { createBrowserRouter, Outlet, useNavigate, useLocation, useParams } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import { AppRoutes } from "./AppRoutes";
-import App from "../App";
+import { MainLayout } from "../layouts";
+import { CharactersPage, EpisodesPage } from "../pages";
 
 
 export const router = createBrowserRouter([
     {
-        element: <App/>,
-        errorElement: <h1>OOOOOpppsie</h1>,
+      path:'',
+        element: <MainLayout/>,
         children: [
           {
-            path: AppRoutes.MAIN,
-            element: <div>Hello world!</div>,
-          },]}])
+            index: true,
+            element: <Navigate to={'characters'}/>,
+          },
+          {
+            path: AppRoutes.EPISODES,
+            element: <EpisodesPage/>,
+          },
+          {
+            path: AppRoutes.CHARACTERS,
+            element: <CharactersPage/>,
+          },
+        
+        
+        ]}])
