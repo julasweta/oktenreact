@@ -1,4 +1,4 @@
-const baseUrl = 'https://rickandmortyapi.com/api'
+const baseUrl = process.env.REACT_APP_API
 
 const urls = {
     character: '/character',
